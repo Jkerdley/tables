@@ -11,7 +11,6 @@ export const TableRow = ({ item, depth = 0, openCharts, toggleChart }) => {
 
     const differenceClass =
         today && yesterday !== today ? (yesterday < today ? styles.lossCeil : styles.profitCeil) : "";
-    console.log("differenceClass", differenceClass);
 
     return (
         <>
