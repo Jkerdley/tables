@@ -1,0 +1,33 @@
+.table {
+    width: 100%;
+    overflow-x: hidden;
+    border-collapse: collapse;
+    thead > tr {
+        background-color: rgba(155, 155, 155, 0.08);
+    }
+    th,
+    td {
+        border: 1px solid rgba(190, 190, 190, 0.45);
+        padding: 2rem 4rem;
+    }
+    caption-side: bottom;
+}
+.boldText {
+    font-weight: 500;
+}
+.tableContainer {
+    width: 80vw;
+}
+.trButton {
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        background: rgba(220, 220, 220, 0.3);
+        cursor: pointer;
+    }
+}
+
+.chartContainer {
+    max-height: 30vh;
+    padding: 1rem;
+    overflow: hidden;
+}
