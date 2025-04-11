@@ -1,33 +1,122 @@
-.table {
+.tableContainer {
+    display: flex;
     width: 100%;
-    overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    overflow-x: auto;
+}
+
+.table {
+    width: 70%;
+
     border-collapse: collapse;
-    thead > tr {
-        background-color: rgba(155, 155, 155, 0.08);
-    }
     th,
     td {
+        padding: 1.5rem 2rem;
         border: 1px solid rgba(190, 190, 190, 0.45);
-        padding: 2rem 4rem;
+        text-align: center;
+        transition: background-color 0.2s ease;
     }
-    caption-side: bottom;
-}
-.boldText {
-    font-weight: 500;
-}
-.tableContainer {
-    width: 80vw;
-}
-.trButton {
-    transition: all 0.2s ease-in-out;
-    &:hover {
-        background: rgba(220, 220, 220, 0.3);
-        cursor: pointer;
+    .tdLeft {
+        text-align: left;
+    }
+    .todayColumn {
+        background-color: rgba(193, 237, 255, 0.1);
+    }
+    .profitCeil {
+        background-color: rgba(231, 255, 193, 0.15);
+        text-align: center;
+        span {
+            margin-left: 1rem;
+            color: rgb(53, 189, 53);
+        }
+    }
+    .lossCeil {
+        background-color: rgba(255, 197, 193, 0.15);
+        text-align: center;
+        span {
+            margin-left: 1rem;
+            color: rgb(219, 79, 79);
+        }
+    }
+
+    thead tr {
+        text-align: center;
+        background-color: rgba(155, 155, 155, 0.08);
     }
 }
 
+.trButton {
+    transition: background 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(220, 220, 220, 0.3);
+    }
+
+    &.active {
+        background: rgba(200, 200, 255, 0.1);
+    }
+}
+
+.boldText {
+    font-weight: 500;
+}
+
+.chartCell {
+    background: #f8f9fa;
+}
+
 .chartContainer {
-    max-height: 30vh;
+    padding: 2rem;
+    background: white;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .recharts-surface {
+        padding: 1rem 0;
+    }
+}
+.chartCell {
+    background: transparent;
+}
+
+.chartContainer {
+    padding: 2rem;
+    background: transparent;
+    box-shadow: none;
+
+    .recharts-surface {
+        padding: 1rem 0;
+    }
+
+    .recharts-cartesian-axis-tick-value {
+        font-size: 12px;
+        fill: #666;
+    }
+
+    .recharts-cartesian-grid line {
+        stroke: rgba(0, 0, 0, 0.05);
+    }
+}
+
+.customTooltip {
+    background: rgba(23, 40, 49, 0.05);
+    border-radius: 1rem;
     padding: 1rem;
-    overflow: hidden;
+    backdrop-filter: blur(5px);
+
+    .label {
+        color: #fff;
+        margin: 0 0 8px 0;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .intro {
+        color: #fff;
+        margin: 0;
+        font-size: 13px;
+        opacity: 0.9;
+    }
 }

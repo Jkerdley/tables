@@ -1,11 +1,7 @@
 import { Table } from "../components/Table";
 
 function App() {
-    return (
-        <main>
-            <Table />
-        </main>
-    );
+    return <Table />;
 }
 
 export default App;
