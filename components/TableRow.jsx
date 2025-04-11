@@ -7,10 +7,17 @@ export const TableRow = ({ item, depth = 0, openCharts, toggleChart }) => {
     const hasChildren = item.children && item.children.length > 0;
     const { today, yesterday } = item;
 
-    const percentage = today && yesterday !== today ? (((yesterday - today) / today) * 100).toFixed(2) : null;
+    const percentage =
+        today && yesterday && yesterday !== today
+            ? (((today - yesterday) / yesterday) * 100).toFixed(2)
+            : null;
 
     const differenceClass =
-        today && yesterday !== today ? (yesterday < today ? styles.lossCeil : styles.profitCeil) : "";
+        today && yesterday && yesterday !== today
+            ? today > yesterday
+                ? styles.profitCeil
+                : styles.lossCeil
+            : "";
 
     return (
         <>
@@ -26,7 +33,7 @@ export const TableRow = ({ item, depth = 0, openCharts, toggleChart }) => {
                     {yesterday.toLocaleString()}
                     {percentage && (
                         <span>
-                            {percentage > 0 ? " +" : " "}
+                            {percentage >= 0 ? " +" : " "}
                             {percentage}%
                         </span>
                     )}
