@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../src/App.module.scss";
-import Chart from "./Chart";
+import { Chart } from "./Chart";
 
 export const TableRow = ({ item, depth = 0, openCharts, toggleChart }) => {
     const isOpen = openCharts[item.id];
